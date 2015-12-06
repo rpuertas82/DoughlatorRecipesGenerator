@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<class>
+   <recipe name="Basic bread">
+      <ingredient name="Flour" quantity="500" per="100"></ingredient>
+      <ingredient name="Water" quantity="300" per="60"></ingredient>
+      <ingredient name="Yeast" quantity="10" per="2"></ingredient>
+      <ingredient name="Salt" quantity="10" per="2"></ingredient>
+      <planner notesFileName="basic_bread.nts"></planner>
+   </recipe>
+   <recipe name="Whole wheat bread">
+      <ingredient name="Flour" quantity="600" per="100"></ingredient>
+      <ingredient name="Water" quantity="400" per="70"></ingredient>
+      <ingredient name="Yeast" quantity="10" per="2"></ingredient>
+      <ingredient name="Salt" quantity="10" per="2"></ingredient>
+      <ingredient name="Wheat grains" quantity="10" per="2"></ingredient>
+      <planner notesFileName="whole_wheat_bread.nts"></planner>
+   </recipe>
+   <recipe name="Brioche">
+      <ingredient name="Flour" quantity="500" per="100"></ingredient>
+      <ingredient name="Water" quantity="200" per="50"></ingredient>
+      <ingredient name="Milk" quantity="100" per="10"></ingredient>
+      <ingredient name="Yeast" quantity="10" per="2"></ingredient>
+      <ingredient name="Salt" quantity="10" per="2"></ingredient>
+      <ingredient name="Butter" quantity="10" per="2"></ingredient>
+      <ingredient name="Sugar" quantity="20" per="4"></ingredient>
+      <planner notesFileName="brioche.nts"></planner>
+   </recipe>
+</class>
