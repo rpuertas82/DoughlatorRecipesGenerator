@@ -254,6 +254,9 @@ public class DoughlatorRecipesGenerator
                               outputMsg = "End Element : recipe";
                               logger.log(outputMsg, Logger.PROCCESS_MSG);
                              
+                              /* Set recipe as builtin recipe */
+                              doughRecipe.setBuiltInRecipe(true);
+                              
                               /* Add recipe to container */
                               doughRecipes.add(doughRecipe);
                            }
