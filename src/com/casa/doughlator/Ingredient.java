@@ -1,7 +1,6 @@
 package com.casa.doughlator;
 
 import java.io.Serializable;
-import java.text.ParseException;
 import java.util.Comparator;
 import java.util.Locale;
 
@@ -20,9 +19,15 @@ public class Ingredient implements Serializable, Cloneable, Comparable<Ingredien
     private boolean baseIngredient;
     private boolean referenceIngredient;
     private boolean isLiquid;
+    private boolean usedAsPreferment;
+    private boolean substractPrefermentQty;
+    private float prefermentFlourQty;
+    private float prefermentFlourRate;
+    private float prefermentHydrationQty;
+    private float prefermentHydrationRate;
     private long id;
 
-    Ingredient()
+    public Ingredient()
     {
 
     }
@@ -48,6 +53,33 @@ public class Ingredient implements Serializable, Cloneable, Comparable<Ingredien
         return ingString;
     }
 
+    /* Used when synthesized from preferment recipe */
+    public Ingredient(
+            String name, float prefermentQty,
+            float prefermentFlourQty, float prefermentHydrationRate)
+    {
+        this.name = name;
+        this.qty = prefermentQty;
+        this.prefermentFlourQty = prefermentFlourQty;
+        this.prefermentHydrationRate = prefermentHydrationRate;
+        this.prefermentFlourRate = (this.prefermentFlourQty*ConstantContainer.ONE_HUNDRED)/this.qty;
+
+        this.usedAsPreferment = true;
+
+        scale(this.qty);
+    }
+
+    public void scale(float prefermentQty)
+    {
+        if(this.usedAsPreferment)
+        {
+            this.prefermentFlourQty =
+                    (this.prefermentFlourRate/ConstantContainer.ONE_HUNDRED)*prefermentQty;
+            this.prefermentHydrationQty =
+                    (this.prefermentHydrationRate/ConstantContainer.ONE_HUNDRED)*this.prefermentFlourQty;
+        }
+    }
+
     public Ingredient(String name, String qty, String per,
                boolean baseIngredient, boolean refIng, boolean isLiquid)
     {
@@ -59,7 +91,7 @@ public class Ingredient implements Serializable, Cloneable, Comparable<Ingredien
         this.baseIngredient = baseIngredient;
     }
 
-    Ingredient(String name, String qty, String per, boolean refIng, boolean isLiquid)
+    public Ingredient(String name, String qty, String per, boolean refIng, boolean isLiquid)
     {
         this.name = name;
         setQty(qty);
@@ -68,7 +100,7 @@ public class Ingredient implements Serializable, Cloneable, Comparable<Ingredien
         referenceIngredient = refIng;
     }
 
-    Ingredient(String name, String qty, String per, boolean refIng)
+    public Ingredient(String name, String qty, String per, boolean refIng)
     {
         this.name = name;
         setQty(qty);
@@ -77,7 +109,7 @@ public class Ingredient implements Serializable, Cloneable, Comparable<Ingredien
         referenceIngredient = refIng;
     }
 
-    Ingredient(String name, int qty, float per)
+    public Ingredient(String name, int qty, float per)
     {
         this.name = name;
         this.qty = qty;
@@ -92,8 +124,14 @@ public class Ingredient implements Serializable, Cloneable, Comparable<Ingredien
         this.name = name;
     }
 
-    public float getQty() {
+    public float getQty()
+    {
         return qty;
+    }
+
+    public float getPrefermentQty()
+    {
+        return (qty-(prefermentHydrationQty+prefermentFlourQty));
     }
 
     public String getQtyString()
@@ -110,6 +148,12 @@ public class Ingredient implements Serializable, Cloneable, Comparable<Ingredien
         return formattedValue;
     }
 
+    public String getPrefermentHydrationRateFormattedString()
+    {
+        String formattedValue = String.format(Locale.US, " %.1f%% H.", prefermentHydrationRate);
+
+        return formattedValue;
+    }
 
     public void setQty(String qty)
     {
@@ -149,11 +193,11 @@ public class Ingredient implements Serializable, Cloneable, Comparable<Ingredien
 
         if(isReferenceIngredient())
         {
-            formattedValue = String.format(Locale.US, "%.1f%%(R)", this.per);
+            formattedValue = String.format(Locale.US, "%.1f%%", this.per);
         }
         else if(isLiquid())
         {
-            formattedValue = String.format(Locale.US, "%.1f%%(L)", this.per);
+            formattedValue = String.format(Locale.US, "%.1f%%", this.per);
         }
         else
         {
@@ -196,16 +240,6 @@ public class Ingredient implements Serializable, Cloneable, Comparable<Ingredien
         return baseIngredient;
     }
 
-    public void setBaseIngredient(boolean value)
-    {
-        baseIngredient = value;
-    }
-    
-    public boolean getBaseIngredient()
-    {
-        return baseIngredient;
-    }
-    
     public void setReferenceIngredient(boolean value)
     {
         referenceIngredient = value;
@@ -260,5 +294,37 @@ public class Ingredient implements Serializable, Cloneable, Comparable<Ingredien
         int retVal = (int)(this.getQty() - ingredient.getQty());
 
         return retVal;
+    }
+
+    public float getPrefermentHydrationRate()
+    {
+        return 1;
+    }
+
+    public float getPrefermentFlourQty() {
+        return prefermentFlourQty;
+    }
+
+    public float getPrefermentHydrationQty() {
+        return prefermentHydrationQty;
+    }
+
+    public boolean isUsedAsPreferment() {
+        return usedAsPreferment;
+    }
+
+    public boolean shouldSubstractPrefermentQty() {
+
+        return substractPrefermentQty;
+    }
+
+    public void setSubstractPrefermentQty(boolean substract)
+    {
+        substractPrefermentQty = substract;
+    }
+    
+    public void setBaseIngredient(boolean value)
+    {
+        baseIngredient = value;
     }
 }

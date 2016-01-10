@@ -17,6 +17,7 @@ public class DoughRecipe extends Recipe implements Serializable, Comparable<Doug
     public final static int ADJUST_BY_QTY = 1;
     private boolean useAsPreferment;
     private int adjustmentMode;
+    private Ingredient preferment;
 
     public DoughRecipe(String recipeName)
     {
@@ -30,6 +31,9 @@ public class DoughRecipe extends Recipe implements Serializable, Comparable<Doug
 
         /* Default value */
         adjustmentMode = ADJUST_BY_PER;
+
+        /* Default value, not preferment added */
+        preferment = null;
     }
 
     @Override
@@ -175,6 +179,9 @@ public class DoughRecipe extends Recipe implements Serializable, Comparable<Doug
         }
 
         i.setQty(qty);
+
+        /* If used as preferment */
+        i.scale(qty);
     }
 
     public void updateIngredientPer(Ingredient i)
@@ -194,6 +201,9 @@ public class DoughRecipe extends Recipe implements Serializable, Comparable<Doug
         }
 
         i.setPer(per);
+
+        /* If used as preferment */
+        i.scale(i.getQty());
     }
 
     public void sortByIngredientsQuantity(boolean reverseOrder)
@@ -222,7 +232,7 @@ public class DoughRecipe extends Recipe implements Serializable, Comparable<Doug
     @Override
     public int compareTo(DoughRecipe another)
     {
-        return getRecipeName().compareTo(another.getRecipeName());
+        return getRecipeName().compareToIgnoreCase(another.getRecipeName());
     }
 
     public int getAdjustmentMode() {
@@ -231,5 +241,111 @@ public class DoughRecipe extends Recipe implements Serializable, Comparable<Doug
 
     public void setAdjustmentMode(int adjustmentMode) {
         this.adjustmentMode = adjustmentMode;
+    }
+
+    public float getLiquidIngredientsWeight()
+    {
+        float weight = 0;
+
+        for(Ingredient i:ingredients)
+        {
+            if(i.isLiquid())
+                weight += i.getQty();
+        }
+
+        return weight;
+    }
+
+    public float getReferencedIngredientsWeight()
+    {
+        float weight = 0;
+
+        for(Ingredient i:ingredients)
+        {
+            if(i.isReferenceIngredient())
+                weight += i.getQty();
+        }
+
+        return weight;
+    }
+
+    public String getFormattedReferencedIngredientsWeight()
+    {
+        String formattedValue = String.format(Locale.US, " %.1f gr.",
+                getReferencedIngredientsWeight());
+
+        return formattedValue;
+    }
+
+    public String getFormattedLiquidIngredientsWeight()
+    {
+        String formattedValue = String.format(Locale.US, " %.1f gr.",
+                getLiquidIngredientsWeight());
+
+        return formattedValue;
+    }
+
+    public Ingredient synthesize()
+    {
+        return new Ingredient(
+                this.getRecipeName(),
+                getRecipeWeight(),
+                getReferencedQty(),
+                getDoughHydration());
+    }
+
+    public Ingredient getPreferment() {
+        return preferment;
+    }
+
+    public void setPreferment(Ingredient preferment) {
+
+        this.preferment = preferment;
+
+        /* We have to mark main ingredients (base flour and main liquid item)
+        to substract preferment quantities when they are represented */
+
+        /* Check for flour base ingredient */
+        for(Ingredient i:ingredients)
+        {
+            if(i.isBaseIngredient()==true)
+                i.setSubstractPrefermentQty(true);
+
+            break;
+        }
+
+        /* Check for main liquid ingredient, get the
+         * major */
+        Ingredient auxIng = null;
+
+        for(Ingredient i:ingredients)
+        {
+            if(i.isLiquid())
+            {
+                if(auxIng==null)
+                {
+                   auxIng = i;
+                }
+                else
+                {
+                    if(i.getQty()>auxIng.getQty())
+                    {
+                        auxIng = i;
+                    }
+                }
+            }
+        }
+
+        /* It should be the major */
+        if(auxIng!=null)
+            auxIng.setSubstractPrefermentQty(true);
+    }
+
+    public boolean isUseAsPreferment() {
+        return useAsPreferment;
+    }
+
+    public void setUseAsPreferment(boolean useAsPreferment) {
+        this.useAsPreferment = useAsPreferment;
     }
 }

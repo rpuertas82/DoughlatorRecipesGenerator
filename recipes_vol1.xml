@@ -1,41 +1,41 @@
 <?xml version="1.0"?>
 <class>
-    <recipe name="Poolish (prefermento)">
+    <recipe name="Poolish" preferment="true">
         <ingredient name="Harina" quantity="100" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
         <ingredient name="Agua" quantity="120" per="120" baseIng="false" refIng="false" isLiquid="true"></ingredient>
         <ingredient name="Levadura seca" quantity="2" per=".23" baseIng="false" refIng="false" isLiquid="false"></ingredient>
         <ingredient name="Sal" quantity="0" per="0" baseIng="false" refIng="false" isLiquid="false"></ingredient>
         <planner notesFileName="poolish_vol1.nts"></planner>
     </recipe>
-    <recipe name="Biga (prefermento)">
+    <recipe name="Biga" preferment="true">
         <ingredient name="Harina" quantity="100" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
         <ingredient name="Agua" quantity="50" per="50" baseIng="false" refIng="false" isLiquid="true"></ingredient>
         <ingredient name="Levadura seca" quantity="10" per="0.43" baseIng="false" refIng="false" isLiquid="false"></ingredient>
         <ingredient name="Sal" quantity="0" per="0" baseIng="false" refIng="false" isLiquid="false"></ingredient>
         <planner notesFileName="biga_vol1.nts"></planner>
     </recipe>
-    <recipe name="Esponja (prefermento)">
+    <recipe name="Esponja" preferment="true">
         <ingredient name="Harina" quantity="100" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
         <ingredient name="Agua" quantity="60" per="60" baseIng="false" refIng="false" isLiquid="true"></ingredient>
         <ingredient name="Levadura seca" quantity="10" per="0.5" baseIng="false" refIng="false" isLiquid="false"></ingredient>
         <ingredient name="Sal" quantity="0" per="0" baseIng="false" refIng="false" isLiquid="false"></ingredient>
         <planner notesFileName="esponja_vol1.nts"></planner>
     </recipe>
-   <recipe name="Pan básico">
+   <recipe name="Pan básico" preferment="false">
       <ingredient name="Harina" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
       <ingredient name="Agua" quantity="300" per="60" baseIng="false" refIng="false" isLiquid="true"></ingredient>
       <ingredient name="Levadura fresca" quantity="10" per="2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
       <ingredient name="Sal" quantity="10" per="2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
       <planner notesFileName="pan_basico_vol1.nts"></planner>
    </recipe>
-   <recipe name="Pizza (Horno de leña)">
+   <recipe name="Pizza (Horno de leña)" preferment="false">
        <ingredient name="Harina" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
        <ingredient name="Agua" quantity="300" per="63" baseIng="false" refIng="false" isLiquid="true"></ingredient>
        <ingredient name="Levadura seca" quantity="10" per="0.1" baseIng="false" refIng="false" isLiquid="false"></ingredient>
        <ingredient name="Sal" quantity="10" per="3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
        <planner notesFileName="pizza_lena_vol1.nts"></planner>
    </recipe>
-   <recipe name="Pizza (Horno eléctrico)">
+   <recipe name="Pizza (Horno eléctrico)" preferment="false">
        <ingredient name="Harina" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
        <ingredient name="Agua" quantity="300" per="63" baseIng="false" refIng="false" isLiquid="true"></ingredient>
        <ingredient name="Aceite" quantity="300" per="7" baseIng="false" refIng="false" isLiquid="true"></ingredient>
@@ -43,7 +43,7 @@
        <ingredient name="Sal" quantity="10" per="3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
        <planner notesFileName="pizza_elec_vol1.nts"></planner>
    </recipe>
-   <recipe name="Pan integral">
+   <recipe name="Pan integral" preferment="false">
        <ingredient name="Harina" quantity="300" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
        <ingredient name="Harina integral" quantity="100" per="66.7" baseIng="false" refIng="true" isLiquid="false"></ingredient>
        <ingredient name="Agua" quantity="300" per="70" baseIng="false" refIng="false" isLiquid="true"></ingredient>
@@ -52,7 +52,7 @@
        <ingredient name="Semillas" quantity="10" per="2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
       <planner notesFileName="pan_integral_vol1.nts"></planner>
    </recipe>
-   <recipe name="Brioche">
+   <recipe name="Brioche" preferment="false">
       <ingredient name="Harina" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
       <ingredient name="Leche" quantity="200" per="25" baseIng="false" refIng="false" isLiquid="true"></ingredient>
       <ingredient name="Huevos" quantity="100" per="51.6" baseIng="false" refIng="false" isLiquid="true"></ingredient>
@@ -62,19 +62,21 @@
       <ingredient name="Azúcar" quantity="20" per="6.3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
       <planner notesFileName="brioche_vol1.nts"></planner>
    </recipe>
-   <recipe name="Roscón de reyes">
-       <ingredient name="Harina" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
-       <ingredient name="Leche" quantity="200" per="53.3" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+   <recipe name="Roscón de reyes" preferment="false">
+       <ingredient name="Harina de fuerza" quantity="250" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Harina de panadería" quantity="250" per="100" baseIng="false" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Leche" quantity="200" per="22.1" baseIng="false" refIng="false" isLiquid="true"></ingredient>
        <ingredient name="Ron" quantity="200" per="6.6" baseIng="false" refIng="false" isLiquid="true"></ingredient>
-       <ingredient name="Agua de azahar" quantity="200" per="1.1" baseIng="false" refIng="false" isLiquid="true"></ingredient>
-       <ingredient name="Huevos" quantity="100" per="10.3" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Agua de azahar" quantity="200" per="8" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Huevos" quantity="100" per="20.6" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Azúcar invertido" quantity="100" per="4" baseIng="false" refIng="false" isLiquid="true"></ingredient>
        <ingredient name="Levadura seca" quantity="10" per="1.4" baseIng="true" refIng="false" isLiquid="false"></ingredient>
        <ingredient name="Sal" quantity="10" per="1.6" baseIng="false" refIng="false" isLiquid="false"></ingredient>
-       <ingredient name="Mantequilla" quantity="10" per="17.2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
-       <ingredient name="Azúcar" quantity="20" per="20.3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Mantequilla" quantity="10" per="15" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Azúcar" quantity="20" per="16" baseIng="false" refIng="false" isLiquid="false"></ingredient>
        <planner notesFileName="roscon_reyes_vol1.nts"></planner>
    </recipe>
-   <recipe name="Cinnamon rolls">
+   <recipe name="Cinnamon rolls" preferment="false">
        <ingredient name="Harina" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
        <ingredient name="Leche" quantity="200" per="59.4" baseIng="false" refIng="false" isLiquid="true"></ingredient>
        <ingredient name="Extracto de limón" quantity="200" per="1.1" baseIng="false" refIng="false" isLiquid="true"></ingredient>
@@ -85,14 +87,14 @@
        <ingredient name="Azúcar" quantity="20" per="20.3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
        <planner notesFileName="cinnamon_vol1.nts"></planner>
    </recipe>
-   <recipe name="Pain a l´ancienne">
+   <recipe name="Pain a l´ancienne" preferment="false">
        <ingredient name="Harina" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
        <ingredient name="Agua" quantity="300" per="73.2" baseIng="false" refIng="false" isLiquid="true"></ingredient>
        <ingredient name="Levadura seca" quantity="10" per="0.7" baseIng="false" refIng="false" isLiquid="false"></ingredient>
        <ingredient name="Sal" quantity="10" per="2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
        <planner notesFileName="pain_ancienne_vol1.nts"></planner>
    </recipe>
-   <recipe name="Focaccia">
+   <recipe name="Focaccia" preferment="false">
        <ingredient name="Harina" quantity="400" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
        <ingredient name="Agua" quantity="300" per="71.1" baseIng="false" refIng="false" isLiquid="true"></ingredient>
        <ingredient name="Aceite" quantity="300" per="13.3" baseIng="false" refIng="false" isLiquid="true"></ingredient>
@@ -100,7 +102,7 @@
        <ingredient name="Sal" quantity="10" per="2.2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
        <planner notesFileName="focaccia_vol1.nts"></planner>
    </recipe>
-   <recipe name="Magdalenas">
+   <recipe name="Magdalenas" preferment="false">
        <ingredient name="Harina" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
        <ingredient name="Leche" quantity="300" per="28.6" baseIng="false" refIng="false" isLiquid="true"></ingredient>
        <ingredient name="Huevos" quantity="300" per="59.5" baseIng="false" refIng="false" isLiquid="true"></ingredient>

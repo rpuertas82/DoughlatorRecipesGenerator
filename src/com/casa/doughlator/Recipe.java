@@ -37,7 +37,14 @@ public class Recipe implements Serializable, Cloneable
 
         for(Ingredient i:ingredients)
         {
-            recipeWeight += i.getQty();
+            if(i.isUsedAsPreferment())
+            {
+                recipeWeight += i.getPrefermentQty();
+            }
+            else
+            {
+                recipeWeight += i.getQty();
+            }
         }
 
         return recipeWeight;
@@ -45,7 +52,7 @@ public class Recipe implements Serializable, Cloneable
 
     public String getFormattedRecipeWeight()
     {
-        String formattedValue = String.format(Locale.US, "%.1f gr.", getRecipeWeight());
+        String formattedValue = String.format(Locale.US, " %.1f gr.", getRecipeWeight());
 
         return formattedValue;
     }

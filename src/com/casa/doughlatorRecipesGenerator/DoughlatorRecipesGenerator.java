@@ -95,12 +95,15 @@ public class DoughlatorRecipesGenerator
                               
                               Iterator<Attribute> attributes = startElement.getAttributes();
                               String recipeName = attributes.next().getValue();
+                              boolean preferment = Boolean.valueOf(attributes.next().getValue());
                               
-                              outputMsg = "Recipe name : " + recipeName;
+                              outputMsg = "Recipe name : " + recipeName + "(Preferment: "+
+                                      (preferment?" Yes)":"No)");
                               logger.log(outputMsg, Logger.PROCCESS_MSG);
 
                               /* New recipe found, create object */
                               doughRecipe = new DoughRecipe(recipeName);
+                              doughRecipe.setUseAsPreferment(preferment);
 
                            } else if (qName.equalsIgnoreCase("ingredient")) {
 
