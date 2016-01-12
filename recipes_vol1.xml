@@ -37,8 +37,8 @@
    </recipe>
    <recipe name="Pizza (Horno eléctrico)" preferment="false">
        <ingredient name="Harina" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
-       <ingredient name="Agua" quantity="300" per="63" baseIng="false" refIng="false" isLiquid="true"></ingredient>
-       <ingredient name="Aceite" quantity="300" per="7" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Agua" quantity="300" per="59" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Aceite" quantity="300" per="4" baseIng="false" refIng="false" isLiquid="true"></ingredient>
        <ingredient name="Levadura seca" quantity="10" per="0.1" baseIng="false" refIng="false" isLiquid="false"></ingredient>
        <ingredient name="Sal" quantity="10" per="3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
        <planner notesFileName="pizza_elec_vol1.nts"></planner>

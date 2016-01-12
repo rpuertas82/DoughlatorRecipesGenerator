@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<class>
+    <recipe name="Poolish" preferment="true">
+        <ingredient name="Flour" quantity="100" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+        <ingredient name="Water" quantity="120" per="120" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+        <ingredient name="Dry yeast" quantity="2" per=".23" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+        <ingredient name="Salt" quantity="0" per="0" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+        <planner notesFileName="poolish_vol1.nts"></planner>
+    </recipe>
+    <recipe name="Biga" preferment="true">
+        <ingredient name="Flour" quantity="100" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+        <ingredient name="Water" quantity="50" per="50" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+        <ingredient name="Dry yeast" quantity="10" per="0.43" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+        <ingredient name="Salt" quantity="0" per="0" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+        <planner notesFileName="biga_vol1.nts"></planner>
+    </recipe>
+    <recipe name="Esponja" preferment="true">
+        <ingredient name="Flour" quantity="100" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+        <ingredient name="Water" quantity="60" per="60" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+        <ingredient name="Dry yeast" quantity="10" per="0.5" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+        <ingredient name="Salt" quantity="0" per="0" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+        <planner notesFileName="esponja_vol1.nts"></planner>
+    </recipe>
+   <recipe name="Basic bread" preferment="false">
+      <ingredient name="Flour" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+      <ingredient name="Water" quantity="300" per="60" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+      <ingredient name="Fresh yeast" quantity="10" per="2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+      <ingredient name="Salt" quantity="10" per="2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+      <planner notesFileName="pan_basico_vol1.nts"></planner>
+   </recipe>
+   <recipe name="Pizza (Wood oven)" preferment="false">
+       <ingredient name="Flour" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Water" quantity="300" per="63" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Dry yeast" quantity="10" per="0.1" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Salt" quantity="10" per="3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <planner notesFileName="pizza_lena_vol1.nts"></planner>
+   </recipe>
+   <recipe name="Pizza (Electric oven)" preferment="false">
+       <ingredient name="Flour" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Water" quantity="300" per="59" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Oil" quantity="300" per="4" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Dry yeast" quantity="10" per="0.1" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Salt" quantity="10" per="3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <planner notesFileName="pizza_elec_vol1.nts"></planner>
+   </recipe>
+   <recipe name="Whole wheat bread" preferment="false">
+       <ingredient name="Flour" quantity="300" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Whole wheat flour" quantity="100" per="66.7" baseIng="false" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Water" quantity="300" per="70" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Fresh yeast" quantity="10" per="2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Salt" quantity="10" per="2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Seeds" quantity="10" per="2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+      <planner notesFileName="pan_integral_vol1.nts"></planner>
+   </recipe>
+   <recipe name="Brioche" preferment="false">
+      <ingredient name="Flour" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+      <ingredient name="Milk" quantity="200" per="25" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+      <ingredient name="Eggs" quantity="100" per="51.6" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+      <ingredient name="Dry yeast" quantity="10" per="1.4" baseIng="true" refIng="false" isLiquid="false"></ingredient>
+      <ingredient name="Salt" quantity="10" per="1.9" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+      <ingredient name="Butter" quantity="10" per="50" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+      <ingredient name="Sugar" quantity="20" per="6.3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+      <planner notesFileName="brioche_vol1.nts"></planner>
+   </recipe>
+   <recipe name="Roscón de reyes" preferment="false">
+       <ingredient name="Strong flour" quantity="250" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Bakery flour" quantity="250" per="100" baseIng="false" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Milk" quantity="200" per="22.1" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Rum" quantity="200" per="6.6" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Orange flower water" quantity="200" per="8" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Eggs" quantity="100" per="20.6" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Inverted sugar" quantity="100" per="4" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Dry yeast" quantity="10" per="1.4" baseIng="true" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Salt" quantity="10" per="1.6" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Butter" quantity="10" per="15" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Sugar" quantity="20" per="16" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <planner notesFileName="roscon_reyes_vol1.nts"></planner>
+   </recipe>
+   <recipe name="Cinnamon rolls" preferment="false">
+       <ingredient name="Flour" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Milk" quantity="200" per="59.4" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Lemon extract" quantity="200" per="1.1" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Eggs" quantity="100" per="10.3" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Dry yeast" quantity="10" per="1.4" baseIng="true" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Salt" quantity="10" per="1.6" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Butter" quantity="10" per="17.2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Sugar" quantity="20" per="20.3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <planner notesFileName="cinnamon_vol1.nts"></planner>
+   </recipe>
+   <recipe name="Pain a l´ancienne" preferment="false">
+       <ingredient name="Flour" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Water" quantity="300" per="73.2" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Yeast" quantity="10" per="0.7" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Salt" quantity="10" per="2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <planner notesFileName="pain_ancienne_vol1.nts"></planner>
+   </recipe>
+   <recipe name="Focaccia" preferment="false">
+       <ingredient name="Flour" quantity="400" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Water" quantity="300" per="71.1" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Oil" quantity="300" per="13.3" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Dry yeast" quantity="10" per="0.98" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Salt" quantity="10" per="2.2" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <planner notesFileName="focaccia_vol1.nts"></planner>
+   </recipe>
+   <recipe name="Magdalenas" preferment="false">
+       <ingredient name="Flour" quantity="500" per="100" baseIng="true" refIng="true" isLiquid="false"></ingredient>
+       <ingredient name="Milk" quantity="300" per="28.6" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Eggs" quantity="300" per="59.5" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Sunflower oil" quantity="300" per="90.5" baseIng="false" refIng="false" isLiquid="true"></ingredient>
+       <ingredient name="Baking powder" quantity="10" per="2.4" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Sugar" quantity="10" per="83.3" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Salt" quantity="10" per="0.5" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <ingredient name="Ground cinnamon" quantity="10" per="0.5" baseIng="false" refIng="false" isLiquid="false"></ingredient>
+       <planner notesFileName="magdalenas_vol1.nts"></planner>
+   </recipe>
+</class>
